@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'pavelyonus',
+	'hostname' => 'dbs4oqsh.mariadb.hosting.zone',
+	'username' => 'dbs4oqsh_kms0cal',
+	'password' => '1m3g0dP+Qr',
+	'database' => 'dbs4oqsh',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
