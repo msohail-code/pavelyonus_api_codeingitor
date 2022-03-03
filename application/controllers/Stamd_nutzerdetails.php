@@ -1,20 +1,20 @@
 <?php 
 
 /**
- * this for the API_api_keys table
+ * this for the API_Stamd_nutzerdetails_model table
  */
-class Api_apikeys extends CI_Controller
+class Stamd_nutzerdetails extends CI_Controller
 {
 	
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model("Api_keys");
+		$this->load->model("Stamd_nutzerdetails_model");
 	}
 
 	public function index($value='')
 	{
-		$ourdata = $this->Api_keys->get()->result();
+		$ourdata = $this->Stamd_nutzerdetails_model->get()->result();
 
 		echo json_encode($ourdata);
 	}
@@ -23,10 +23,10 @@ class Api_apikeys extends CI_Controller
 	{
 		if (!empty($id)) 
 		{
-			$present = $this->Api_keys->get_single($id)->num_rows();
+			$present = $this->Stamd_nutzerdetails_model->get_single($id)->num_rows();
 			if ($present) 
 			{
-				if($this->Api_keys->delete($id))
+				if($this->Stamd_nutzerdetails_model->delete($id))
 				{
 					echo "Data has been deleted";
 				} 
@@ -55,7 +55,7 @@ class Api_apikeys extends CI_Controller
 
 			
 
-			$insert_run = $this->Api_keys->insert($data);
+			$insert_run = $this->Stamd_nutzerdetails_model->insert($data);
 			if($insert_run)
 			{
 				echo "Data has been inserted Successfully!!!";
@@ -77,7 +77,7 @@ class Api_apikeys extends CI_Controller
 		if (!empty($id)) 
 		{
 			// code...
-			$present = $this->Api_keys->get_single($id)->num_rows();
+			$present = $this->Stamd_nutzerdetails_model->get_single($id)->num_rows();
 			if($present)
 			{
 
@@ -88,7 +88,7 @@ class Api_apikeys extends CI_Controller
 						$data[$key] = $value;
 					}
 
-					$insert_run = $this->Api_keys->update($data,$id);
+					$insert_run = $this->Stamd_nutzerdetails_model->update($data,$id);
 					if($insert_run)
 					{
 						echo "Data has been Updated";				
