@@ -10,6 +10,7 @@ class Vorgaben_zeitraum extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model("Vorgaben_zeitraum_model");
+		$this->load->model("Auth_model");
 	}
 
 	public function index($value='')
@@ -48,6 +49,19 @@ class Vorgaben_zeitraum extends CI_Controller
 	public function add()
 	{
 		if(!empty($_POST)){
+			if (empty($_POST['auth_key'] or empty($_POST['secret_key']))) 
+			{
+				echo "Your are not allowed";
+				exit;
+			} 
+			else
+			{
+				if (!$this->Auth_model->authenticate($_POST['auth_key'], $_POST["secret_key"])) 
+				{
+					echo "Your are not allowed";
+					exit;
+				}
+			}
 			$data = [];
 			foreach ($_POST as $key => $value) {
 				$data[$key] = $value;
@@ -76,6 +90,19 @@ class Vorgaben_zeitraum extends CI_Controller
 	{
 		if (!empty($id)) 
 		{
+			if (empty($_POST['auth_key'] or empty($_POST['secret_key']))) 
+			{
+				echo "Your are not allowed";
+				exit;
+			} 
+			else
+			{
+				if (!$this->Auth_model->authenticate($_POST['auth_key'], $_POST["secret_key"])) 
+				{
+					echo "Your are not allowed";
+					exit;
+				}
+			}
 			// code...
 			$present = $this->Vorgaben_zeitraum_model->get_single($id)->num_rows();
 			if($present)

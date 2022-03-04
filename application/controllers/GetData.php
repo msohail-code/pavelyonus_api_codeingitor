@@ -36,5 +36,12 @@ class GetData extends CI_Controller
 			http_response_code(404);
 		}
 	}
+
+	public function current_time($value='')
+	{
+		// code...
+
+		echo date("Y-M-d H:i:s");
+	}
 }
  ?>

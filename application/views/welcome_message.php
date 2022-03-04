@@ -68,21 +68,79 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+	<h1>Welcome Here!</h1>
 
 	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+		<ol>
+			<li><a href="<?php echo base_url("getdata/current_time"); ?>">Current server time</a></li>
+			<li><a href="<?php echo base_url("Api_apikeys/"); ?>">Api_Apikeys</a>
+				<ol>
+					<li><a href="<?php echo base_url("Api_apikeys/"); ?>">/</a> GET</li>
+					<li><a href="">/insert</a> Post</li>
+					<li><a href="">/update/id</a> POST</li>
+					<li><a href="">/delete/id</a> GET</li>
+				</ol>
+			</li>
+			<li><a href="<?php echo base_url("Stamd_flagbit_ref/"); ?>">Stamd_flagbit_ref</a>
+			<ol>
+					<li><a href="<?php echo base_url("Api_apikeys/"); ?>">/</a> GET</li>
+					<li><a href="">/insert</a> Post</li>
+					<li><a href="">/update/id</a> POST</li>
+					<li><a href="">/delete/id</a> GET</li>
+				</ol></li>
+			<li><a href="<?php echo base_url("Stamd_nutzerdetails/"); ?>">Stamd_nutzerdetails</a>
+				<ol>
+					<li><a href="<?php echo base_url("Api_apikeys/"); ?>">/</a> GET</li>
+					<li><a href="">/insert</a> Post</li>
+					<li><a href="">/update/id</a> POST</li>
+					<li><a href="">/delete/id</a> GET</li>
+				</ol>
+			</li>
+			<li><a href="<?php echo base_url("Transaktion_transaktionen/"); ?>">Transaktion_transaktionen</a>
+				<ol>
+					<li><a href="<?php echo base_url("Api_apikeys/"); ?>">/</a> GET</li>
+					<li><a href="">/insert</a> Post</li>
+					<li><a href="">/update/id</a> POST</li>
+					<li><a href="">/delete/id</a> GET</li>
+				</ol>
+			</li>
+			<li><a href="<?php echo base_url("Vertragsverw_vertrag/"); ?>">Vertragsverw_vertrag</a>
+				<ol>
+					<li><a href="<?php echo base_url("Api_apikeys/"); ?>">/</a> GET</li>
+					<li><a href="">/insert</a> Post</li>
+					<li><a href="">/update/id</a> POST</li>
+					<li><a href="">/delete/id</a> GET</li>
+				</ol>
+			</li>
+			<li><a href="<?php echo base_url("Vorgaben_datensatz_typ/"); ?>">Vorgaben_datensatz_typ</a>
+				<ol>
+					<li><a href="<?php echo base_url("Api_apikeys/"); ?>">/</a> GET</li>
+					<li><a href="">/insert</a> Post</li>
+					<li><a href="">/update/id</a> POST</li>
+					<li><a href="">/delete/id</a> GET</li>
+				</ol>
+			</li>
+			<li><a href="<?php echo base_url("Vorgaben_flagbit/"); ?>">Vorgaben_flagbit</a>
+				<ol>
+					<li><a href="<?php echo base_url("Api_apikeys/"); ?>">/</a> GET</li>
+					<li><a href="">/insert</a> Post</li>
+					<li><a href="">/update/id</a> POST</li>
+					<li><a href="">/delete/id</a> GET</li>
+				</ol>
+			</li>
+			<li><a href="<?php echo base_url("Vorgaben_zeitraum/"); ?>">Vorgaben_zeitraum</a>
+				<ol>
+					<li><a href="<?php echo base_url("Api_apikeys/"); ?>">/</a> GET</li>
+					<li><a href="">/insert</a> Post</li>
+					<li><a href="">/update/id</a> POST</li>
+					<li><a href="">/delete/id</a> GET</li>
+				</ol>
+			</li>
+			
+		</ol>
 	</div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+	
 </div>
 
 </body>
